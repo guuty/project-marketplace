@@ -77,7 +77,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'marketplatce.wsgi.application'
+WSGI_APPLICATION = 'marketplace.wsgi.application'
 
 
 # Database

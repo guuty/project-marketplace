@@ -1,1 +1,23 @@
+# Entorno virtual
+venv/
+env/
+*.pyc
+__pycache__/
+
+# Archivos de sistema
+.DS_Store
+Thumbs.db
+
+# Archivos de configuración locales / secretos
 .env
+*.sqlite3
+
+# Archivos de log
+*.log
+
+# Carpeta de migraciones compiladas (opcional)
+*/migrations/*.pyc
+*/migrations/__pycache__/
+
+# Archivos estáticos compilados (opcional)
+staticfiles/

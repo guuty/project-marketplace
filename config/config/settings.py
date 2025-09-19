@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'users',
     'django-payments',
+    'market',
 ]
 
 # Configuración inicial REST Framework

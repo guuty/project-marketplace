@@ -24,14 +24,17 @@ SOCIALACCOUNT_PROVIDERS = {
             "client_id": env("GOOGLE_CLIENT_ID"),
             "secret": env("GOOGLE_CLIENT_SECRET"),
             "key": ""
-        }
+        },
+        "SCOPE": ["user:email"],
+        "AUTH_PARAMS": {"access_type": "online"},
     },
     "github": {
         "APP":{
             "client_id": env("GOOGLE_CLIENT_ID"),
             "secret": env("GOOGLE_CLIENT_SECRET"),
             "key": ""
-        }
+        },
+        "SCOPE": ["user:email"],
     }
 }
 
@@ -62,6 +65,7 @@ INSTALLED_APPS = [
     "django.contrib.sites",           # <-- requerido por allauth
     'core',
     'perfil',
+    'market',
     # Terceros
     "allauth",                        # núcleo
     "allauth.account",                # cuentas locales (si querés)
@@ -129,6 +133,8 @@ DATABASES = {
 STATIC_URL = "static/"
 # Password validation
 # https://docs.djangoproject.com/en/5.2/ref/settings/#auth-password-validators
+MEDIA_URL = "/media/"
+MEDIA_ROOT = BASE_DIR / "media"
 
 AUTH_PASSWORD_VALIDATORS = [
     {

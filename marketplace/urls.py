@@ -17,11 +17,19 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path , include
 from core.views import home 
+from perfil.views import edit_profile, profile_view
+
+from django.conf import settings
+from django.conf.urls.static import static
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("accounts/", include("allauth.urls")),  # rutas de allauth
     path("", home, name="home"),
-
-]
+    path("productos/", include("market.urls")),  
+    path("editar/", edit_profile, name="edit_profile"),      # desde perfil.views
+    path("ver_perfil/", profile_view, name="profile"),
+] 
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
